@@ -2,6 +2,10 @@ import React from 'react';
 import image from '../../assets/images/login/login.svg'
 
 const Login = () => {
+
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
     return (
         <div className="hero min-h-screen  w-full">
         <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
@@ -10,7 +14,7 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-5xl text-center pt-2 font-bold">Login now!</h1>
-            <form className="card-body">
+            <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
