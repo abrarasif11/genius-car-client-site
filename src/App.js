@@ -1,8 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main';
+import CheckOut from './Page/CheckOut/CheckOut';
 import Home from './Page/Home/Home/Home';
 import Login from './Page/Login/Login';
+import Orders from './Page/Orders/Orders';
 import SignUp from './Page/SignUp/SignUp';
 
 function App() {
@@ -22,6 +24,15 @@ function App() {
       {
         path : '/signup',
         element: <SignUp></SignUp>
+      },
+      {
+        path : '/checkout/:_id',
+        element : <CheckOut></CheckOut>,
+        loader : ({params}) => fetch(`http://localhost:5000/services/${params._id}`)
+      },
+      {
+        path : '/orders',
+        element : <Orders></Orders>
       }
     ]
    }
