@@ -29,7 +29,7 @@ function App() {
       {
         path : '/checkout/:_id',
         element : <PrivateRoute><CheckOut></CheckOut></PrivateRoute> ,
-        loader : ({params}) => fetch(`http://localhost:5000/services/${params._id}`)
+        loader : ({params}) => fetch(`https://y-lac-xi.vercel.app/services/${params._id}`)
       },
       {
         path : '/orders',

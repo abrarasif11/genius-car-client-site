@@ -5,7 +5,7 @@ const OrderRaw = ({order, handleStatusUpdate , handleDelete}) => {
     const {_id,serviceName, customer, phone, price, status,service} = order;
     const[orderService, setOrderService] = useState({})
     useEffect(() =>{
-         fetch(`http://localhost:5000/services/${service}`)
+         fetch(`https://y-lac-xi.vercel.app/services/${service}`)
          .then(res => res.json())
          .then(data => setOrderService(data))
     },[service])

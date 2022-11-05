@@ -2,6 +2,7 @@ import { Result } from 'postcss';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../assets/images/login/login.svg';
+import { setToken } from '../../Auth/Auth';
 import { AuthContext } from '../Login/Context/AuthProvider/AuthProvider';
 const SignUp = () => {
     const {createUser} = useContext(AuthContext)
@@ -15,6 +16,7 @@ const SignUp = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setToken(user);
         })
         .catch(err => console.err(err));
       }

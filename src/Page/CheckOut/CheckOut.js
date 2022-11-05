@@ -24,7 +24,7 @@ const CheckOut = () => {
             phone,
             message
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://y-lac-xi.vercel.app/orders', {
             method : 'POST',
             headers : {
                 'content-type': 'application/json',

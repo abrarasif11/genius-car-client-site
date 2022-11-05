@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../assets/images/login/login.svg'
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from './Context/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -25,7 +26,7 @@ const Login = () => {
       }
       console.log(currentUser);
       // get jwt token
-      fetch('http://localhost:5000/jwt', {
+      fetch('https://y-lac-xi.vercel.app/jwt', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -71,6 +72,7 @@ const Login = () => {
               </div>
             </form>
             <p className='text-center'>New To Genius Car <Link className='font-bold text-orange-600' to='/signup'>Sign Up</Link>  </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
